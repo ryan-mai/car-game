@@ -6,7 +6,7 @@ extends RigidBody3D
 @export var effectTurnTilt := 0.75
 
 @onready var car: Node3D = $Car
-@onready var carMesh: MeshInstance3D = $Car/CarBody
+@onready var carMesh: MeshInstance3D = $Car/Car
 
 var speedForce: float
 var turnDegree: float

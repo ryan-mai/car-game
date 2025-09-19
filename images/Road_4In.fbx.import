@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://irx4a8qafw3f"
-path="res://.godot/imported/Car.fbx-3c717ac27e87a305411138bcb804f880.scn"
+uid="uid://br3jjimoy5nrn"
+path="res://.godot/imported/Road_4In.fbx-2bc89d3b1b132e3bc4492cece90adedc.scn"
 
 [deps]
 
-source_file="res://images/Car.fbx"
-dest_files=["res://.godot/imported/Car.fbx-3c717ac27e87a305411138bcb804f880.scn"]
+source_file="res://images/Road_4In.fbx"
+dest_files=["res://.godot/imported/Road_4In.fbx-2bc89d3b1b132e3bc4492cece90adedc.scn"]
 
 [params]
 
@@ -32,7 +32,13 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Road_4in": {
+"generate/physics": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

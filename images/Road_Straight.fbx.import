@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://irx4a8qafw3f"
-path="res://.godot/imported/Car.fbx-3c717ac27e87a305411138bcb804f880.scn"
+uid="uid://cg4vee0lb0fiw"
+path="res://.godot/imported/Road_Straight.fbx-40fd5caf40cceed5c7f44e9b904982a2.scn"
 
 [deps]
 
-source_file="res://images/Car.fbx"
-dest_files=["res://.godot/imported/Car.fbx-3c717ac27e87a305411138bcb804f880.scn"]
+source_file="res://images/Road_Straight.fbx"
+dest_files=["res://.godot/imported/Road_Straight.fbx-40fd5caf40cceed5c7f44e9b904982a2.scn"]
 
 [params]
 
@@ -32,7 +32,13 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Road_Straight": {
+"generate/physics": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
