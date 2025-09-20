@@ -1,22 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://8v48fcl6yo0l"]
 
 [ext_resource type="Script" uid="uid://b3qodoguiso0k" path="res://car.gd" id="1_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://irx4a8qafw3f" path="res://images/Car.fbx" id="2_uoj53"]
+[ext_resource type="PackedScene" uid="uid://dyjjehir7fyfr" path="res://images/car.fbx" id="2_uoj53"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7822p"]
-radius = 0.1
+[sub_resource type="BoxShape3D" id="BoxShape3D_k61xc"]
+size = Vector3(0.0908203, 0.0603027, 0.337646)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Car" type="RigidBody3D"]
 linear_damp = 6.0
 script = ExtResource("1_e2o6t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_7822p")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.116724, 0.0281982)
+shape = SubResource("BoxShape3D_k61xc")
 
 [node name="Car" parent="." instance=ExtResource("2_uoj53")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.25, -0.1, 0.25)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="WFR" parent="Car" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1.58104, 0.650343, 2.94549)
+
+[node name="CarBody" parent="Car" index="5"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -5.47045e-08, 1.38332, 0.0153657)
 
 [node name="Camera3D" type="Camera3D" parent="Car"]
-transform = Transform3D(-2, -4.52534e-08, 1.68888e-07, 0, 1.93185, 0.517638, -1.74846e-07, 0.517638, -1.93185, -0.5, 1, -1.75)
+transform = Transform3D(-10, 0, 8.74228e-07, 0, 10, 0, -8.74228e-07, 0, -10, 0, 3, -7)
 
 [editable path="Car"]
