@@ -220,7 +220,7 @@ size = Vector3(1, 0.725151, 2.36155)
 size = Vector3(1, 0.814331, 1.77527)
 
 [node name="Suv" type="VehicleBody3D"]
-mass = 2.0
+mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_xd8gw")
@@ -302,4 +302,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.907166, -0.266174)
 shape = SubResource("BoxShape3D_3g1xa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, -2.26267e-08, 0.965926, 0.258819, 8.44439e-08, 0.258819, -0.965926, 0, 2.8645, -3.5262)
+transform = Transform3D(-1, 1.51808e-08, 8.60946e-08, 0, 0.984808, -0.173648, -8.74228e-08, -0.173648, -0.984808, 0.3, 1, 0.55)
+fov = 45.0
