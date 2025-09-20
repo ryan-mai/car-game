@@ -1,13 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://doh47qgk82nsp"]
+[gd_scene load_steps=9 format=3 uid="uid://doh47qgk82nsp"]
 
 [ext_resource type="PackedScene" uid="uid://8v48fcl6yo0l" path="res://car.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dq3uni3c4j8j5" path="res://track.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cpfnfjhmv6nje" path="res://ui.tscn" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://d1ncy1ri3o5bq" path="res://startpoint.tscn" id="4_ryrav"]
 [ext_resource type="PackedScene" uid="uid://1ngvgt7qu6j4" path="res://checkpoint.tscn" id="5_eow3j"]
+[ext_resource type="PackedScene" uid="uid://bkhmnmaoom1g8" path="res://car_ai.tscn" id="6_ryrav"]
 
 [sub_resource type="Environment" id="Environment_e2o6t"]
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7jktm"]
+vertices = PackedVector3Array(-11.7601, 0.581795, -5.24948, -11.2601, 0.581795, -5.24948, -11.0101, 0.581795, -6.24948, -11.7601, 0.581795, -6.74948, -6.2601, 0.581795, -6.24948, -6.2601, 0.581795, -6.74948, -0.0101004, 0.581795, -6.24948, 0.2399, 0.581795, -3.99948, 0.7399, 0.581795, -3.99948, 0.7399, 0.581795, -6.74948, -5.7601, 0.581795, -6.74948, -5.7601, 0.581795, -6.24948, -10.0101, 0.581795, 0.75052, -10.0101, 0.581795, 0.25052, -11.2601, 0.581795, 0.000520229, -11.7601, 0.581795, 0.75052, -11.7601, 0.581795, -4.74948, -11.2601, 0.581795, -4.74948, 0.2399, 0.581795, -3.49948, 0.2399, 0.581795, 0.75052, 0.7399, 0.581795, 0.75052, 0.7399, 0.581795, -3.49948, -0.7601, 1.60179, 0.000520229, -0.7601, 1.77179, 0.75052, -0.0101004, 1.60179, 0.75052, -0.0101004, 1.60179, 0.000520229, -9.5101, 0.581795, 0.25052, -9.5101, 0.581795, 0.75052, -1.0101, 0.581795, 0.75052, -1.0101, 0.581795, 0.25052, -0.7601, 0.581795, 0.25052, -0.7601, 0.581795, 0.75052, -0.0101004, 0.581795, 0.75052, -0.0101004, 0.581795, 0.25052)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(11, 10, 6), PackedInt32Array(6, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 14, 16), PackedInt32Array(16, 14, 15), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31)]
+geometry_parsed_geometry_type = 0
+geometry_source_geometry_mode = 1
+cell_height = 0.17
+agent_height = 0.2
+agent_radius = 0.1
 
 [node name="Game" type="Node3D"]
 
@@ -17,7 +27,10 @@ environment = SubResource("Environment_e2o6t")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.371757, 0, 0.92833, 0, 1, 0, -0.92833, 0, -0.371757, 2.49626, 1.39603, -2.56186)
 
-[node name="Track" parent="." instance=ExtResource("2_e2o6t")]
+[node name="Car" parent="." instance=ExtResource("1_80nbo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.568488, 0.165, 0.605629)
+
+[node name="Track" parent="." groups=["navigation_mesh_source_group"] instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Startpoint" parent="Track" instance=ExtResource("4_ryrav")]
@@ -35,7 +48,11 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 1.00273,
 [node name="Checkpoint4" parent="Track" instance=ExtResource("5_eow3j")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.0101, 0.146626, -5.45762)
 
-[node name="Car" parent="." instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.417274, 0.183956, 0)
-
 [node name="UI" parent="." instance=ExtResource("3_7jktm")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.258475, 0)
+navigation_mesh = SubResource("NavigationMesh_7jktm")
+
+[node name="CarAi" parent="." instance=ExtResource("6_ryrav")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.52747, 0.188943, 0.323804)
