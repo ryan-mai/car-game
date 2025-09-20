@@ -4,7 +4,6 @@ extends RigidBody3D
 @export var steering := 1.5
 @export var effectTurnSpeed := 0.1
 @export var effectTurnTilt := 0.5
-
 @onready var car: Node3D = $Car
 @onready var carBody: MeshInstance3D = $Car/CarBody
 @onready var carTailLight: MeshInstance3D = $Car/TailLight
@@ -17,6 +16,8 @@ var speedForce: float
 var turnDegree: float
 
 func _ready() -> void:
+	axis_lock_angular_x = true
+	axis_lock_angular_z = true
 	add_to_group("player")
 	#car.top_level = true
 	
@@ -29,9 +30,10 @@ func _physics_process(delta: float) -> void:
 	_curve_effect(delta)
 	
 	#car.rotate_y(turnDegree)
+	var steerStrength = linear_velocity.length() + 5.0
 
 	apply_force(-global_transform.basis.z * speedForce)
-	apply_torque(Vector3.UP * turnDegree * linear_velocity.length())
+	apply_torque(Vector3.UP * turnDegree * steerStrength)
 func _curve_effect(delta) -> void:
 	var turnStrengthValue = turnDegree * linear_velocity.length() / effectTurnSpeed
 	var turnTiltValue = -turnDegree * linear_velocity.length() / effectTurnTilt
