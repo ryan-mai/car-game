@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ncy1ri3o5bq"]
+
+[ext_resource type="Script" uid="uid://c7rn4pa67gq0e" path="res://startpoint.gd" id="1_2svpo"]
+[ext_resource type="PackedScene" uid="uid://cdsnsbxe4blmi" path="res://images/Start.fbx" id="1_qxr48"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qxr48"]
+size = Vector3(0.867432, 0.952576, 0.867188)
+
+[node name="Startpoint" type="Area3D"]
+script = ExtResource("1_2svpo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483246, 0)
+shape = SubResource("BoxShape3D_qxr48")
+
+[node name="Start" parent="." instance=ExtResource("1_qxr48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.503, 0, 0.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
