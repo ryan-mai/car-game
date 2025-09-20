@@ -10,5 +10,4 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	var isPlayer = get_tree().get_first_node_in_group("player")
 	if isPlayer: hasPassed = true
-	print(isPlayer, " YAY")
 	

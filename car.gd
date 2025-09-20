@@ -12,6 +12,7 @@ var speedForce: float
 var turnDegree: float
 
 func _ready() -> void:
+	add_to_group("player")
 	car.top_level = true
 	
 func _physics_process(delta: float) -> void:
