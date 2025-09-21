@@ -6,6 +6,9 @@ var max_torque = 300
 var turn_speed = 3
 var turn_amount = 0.3
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _physics_process(delta: float) -> void:
 	
 	var direction = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
@@ -18,17 +21,14 @@ func _physics_process(delta: float) -> void:
 	var torque = direction * max_torque * (1.0 - RPM / max_RPM)
 
 	steering = lerp(steering, steering_direction * turn_amount, turn_speed * delta)
-	print(engine_force)
 	if direction != 0:
 		if direction < 0:
-			camera.position.x = 0.3
-			camera.position.y = 1.2
-			camera.position.z = -1.0
+			camera.position.y = 2.5
+			camera.position.z = 5.0
 			camera.rotation.y = 0
 		else:
-			camera.position.x = 0.3
-			camera.position.y = 1.0
-			camera.position.z = 0.55
+			camera.position.y = 3.0
+			camera.position.z = -5.0
 			camera.rotation.y = deg_to_rad(180.0)
 		engine_force = torque
 		brake = 0

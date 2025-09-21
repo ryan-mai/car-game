@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var laps := 1
+var laps := -1
 
 func _ready() -> void:
 	var startPoint = get_tree().get_first_node_in_group("startPoint")

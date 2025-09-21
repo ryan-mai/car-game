@@ -1,12 +1,14 @@
 [gd_scene load_steps=18 format=4 uid="uid://ckoq8se7tgpyl"]
 
-[ext_resource type="Texture2D" uid="uid://tv2m64kiktw7" path="res://images/colormap.png" id="1_t8eya"]
 [ext_resource type="Script" uid="uid://vumjyynjdec1" path="res://suv.gd" id="1_xd8gw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t8eya"]
+load_path = "res://.godot/imported/colormap.png-2c32f3bfbcce75dd99cefba56226facb.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwggt"]
 resource_name = "colormap"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_t8eya")
+albedo_texture = SubResource("CompressedTexture2D_t8eya")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t8eya"]
@@ -302,5 +304,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.907166, -0.266174)
 shape = SubResource("BoxShape3D_3g1xa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 1.51808e-08, 8.60946e-08, 0, 0.984808, -0.173648, -8.74228e-08, -0.173648, -0.984808, 0.3, 1, 0.55)
+transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, 3, -5)
 fov = 45.0

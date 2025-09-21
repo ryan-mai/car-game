@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://j6csdn8r6tj3"]
+
+[ext_resource type="Script" uid="uid://67haavxmqe7y" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="Button_Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Button_Manager"]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 101.0
+offset_right = 738.0
+offset_bottom = 183.0
+text = "Start"
+
+[node name="Settings" type="Button" parent="Button_Manager"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 326.0
+offset_right = 731.0
+offset_bottom = 404.0
+text = "Settings"
+
+[node name="Login" type="Button" parent="Button_Manager"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 220.0
+offset_right = 730.0
+offset_bottom = 293.0
+text = "Login
+"
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button_Manager/Login" to="." method="_on_login_pressed"]
