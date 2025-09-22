@@ -1,5 +1,7 @@
 extends VehicleBody3D
 
+signal emit_speed(speed)
+
 @onready var camera: Camera3D = $Camera3D
 var max_RPM = 450
 var max_torque = 300
@@ -18,8 +20,8 @@ func _physics_process(delta: float) -> void:
 	var right_RPM = abs($wheel_back_right.get_rpm())
 	var RPM = (left_RPM + right_RPM) / 2.0
 	
-	var torque = direction * max_torque * (1.0 - RPM / max_RPM)
-
+	var torque = direction * max_torque * (2.0 - RPM / max_RPM)
+	emit_signal("emit_speed", (torque))
 	steering = lerp(steering, steering_direction * turn_amount, turn_speed * delta)
 	if direction != 0:
 		if direction < 0:

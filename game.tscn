@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doh47qgk82nsp"]
+[gd_scene load_steps=9 format=3 uid="uid://doh47qgk82nsp"]
 
 [ext_resource type="PackedScene" uid="uid://dq3uni3c4j8j5" path="res://track.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cpfnfjhmv6nje" path="res://ui.tscn" id="3_7jktm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckoq8se7tgpyl" path="res://suv.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://1ngvgt7qu6j4" path="res://checkpoint.tscn" id="5_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dxp50wjs8sog8" path="res://timer.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://crhd1w8y2gnib" path="res://speed.tscn" id="7_eow3j"]
 
 [sub_resource type="Environment" id="Environment_e2o6t"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -41,4 +42,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.01
 [node name="Timer" parent="." instance=ExtResource("6_ryrav")]
 
 [node name="Suv" parent="." instance=ExtResource("5_7jktm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -149.112, -0.124867, 6.86413)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -321.242, 7.1654, -17.6465)
+
+[node name="Speed" parent="." instance=ExtResource("7_eow3j")]
