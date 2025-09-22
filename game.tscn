@@ -31,17 +31,32 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.30
 [node name="Checkpoint2" parent="Track" instance=ExtResource("5_eow3j")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5.51097, 0.0977756, -6.99948)
 
-[node name="Checkpoint3" parent="Track" instance=ExtResource("5_eow3j")]
-transform = Transform3D(0.95, 0, -1.66104e-07, 0, 0.95, 0, 1.66104e-07, 0, 0.95, 0.976338, -0.18332, -3.3348)
+[node name="Checkpoint5" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -27.3684, 0.146626, -5.45762)
 
-[node name="Checkpoint4" parent="Track" instance=ExtResource("5_eow3j")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.0101, 0.146626, -5.45762)
+[node name="Checkpoint6" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -42.8447, 0.146626, -16.1469)
+
+[node name="Checkpoint7" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -42.725, 4.94179, 14.9775)
+
+[node name="Checkpoint8" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -39.5211, 4.62664, 29.3729)
+
+[node name="Checkpoint9" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.7935, 1.33118, 29.3729)
+
+[node name="Checkpoint10" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30.4539, -1.24648, 22.967)
+
+[node name="Checkpoint11" parent="Track" instance=ExtResource("5_eow3j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30.4449, 2.44851, 1.84473)
 
 [node name="UI" parent="." instance=ExtResource("3_7jktm")]
 
 [node name="Timer" parent="." instance=ExtResource("6_ryrav")]
 
 [node name="Suv" parent="." instance=ExtResource("5_7jktm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -321.242, 7.1654, -17.6465)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 1.5, 2)
 
 [node name="Speed" parent="." instance=ExtResource("7_eow3j")]
